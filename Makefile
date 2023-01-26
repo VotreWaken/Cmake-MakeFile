@@ -1,9 +1,12 @@
-main: main.o
-	g++ main.o -o main # Runs Third
+some_file: other_file 
+	echo "This will alwaus run, and runs second"
+	touch some_file # Create Some_file
 
-main.o: main.cpp
-	g++ -c main.cpp -o main.o # Runs Seconds
+other_file: 
+	echo "This will always run, and runs first"
 
-main.cpp: 
-	echo "int main() {return 0;}" > main.cpp # Runs First 
+some_file: 
+	echo "Some File Here" 
 
+clean: 
+	rm -f some_file # Clean File
