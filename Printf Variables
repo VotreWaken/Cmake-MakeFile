@@ -1,0 +1,7 @@
+a := one two # a is assigned to the string "one two"
+b := 50
+
+all: 
+	printf '$a'
+	printf $b
+
